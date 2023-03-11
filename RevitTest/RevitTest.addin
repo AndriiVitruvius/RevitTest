@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Application RevitTest</Name>
+    <Assembly>RevitTest.dll</Assembly>
+    <FullClassName>RevitTest.App</FullClassName>
+    <ClientId>bb4f7127-75ec-40d7-8f95-ac075a2937a4</ClientId>
+    <VendorId>Andrii Hutsaliuk</VendorId>
+    <VendorDescription></VendorDescription>
+  </AddIn>
+</RevitAddIns>

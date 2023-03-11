@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitTest", "RevitTest\RevitTest.csproj", "{22E43126-978C-4DC2-964F-70F54BC13F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionRevit", "ExtensionRevit\ExtensionRevit.csproj", "{DC3B680F-DDED-48FB-9976-B2900A8AEEC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22E43126-978C-4DC2-964F-70F54BC13F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E43126-978C-4DC2-964F-70F54BC13F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E43126-978C-4DC2-964F-70F54BC13F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E43126-978C-4DC2-964F-70F54BC13F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3B680F-DDED-48FB-9976-B2900A8AEEC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3B680F-DDED-48FB-9976-B2900A8AEEC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3B680F-DDED-48FB-9976-B2900A8AEEC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3B680F-DDED-48FB-9976-B2900A8AEEC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2B1C6BF-9167-4AC6-939A-65F4727957C7}
+	EndGlobalSection
+EndGlobal
