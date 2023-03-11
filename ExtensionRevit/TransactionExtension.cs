@@ -1,13 +1,9 @@
 ﻿using Autodesk.Revit.DB;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtensionRevit
 {
-	public static class Extention
+	public static class TransactionExtension
 	{
 		public static void CallWithTransaction(this Document doc ,Action action)
 		{
@@ -15,7 +11,6 @@ namespace ExtensionRevit
 			TransactionNameAttribute attribute = (TransactionNameAttribute)Attribute.GetCustomAttribute(action.Method, typeof(TransactionNameAttribute));
 
 			string transactionName = attribute?.TransactionName ?? "Transaction";
-
 
 			using (Transaction tx = new Transaction(doc))
 			{
@@ -33,18 +28,16 @@ namespace ExtensionRevit
 			}
 		}
 
+	}
 
-		[AttributeUsage(AttributeTargets.Method)]
-		public class TransactionNameAttribute : Attribute
+	[AttributeUsage(AttributeTargets.Method)]
+	public class TransactionNameAttribute : Attribute
+	{
+		public string TransactionName { get; set; }
+
+		public TransactionNameAttribute(string transactionName)
 		{
-			public string TransactionName { get; set; }
-
-			public TransactionNameAttribute(string transactionName)
-			{
-				TransactionName = transactionName;
-			}
+			TransactionName = transactionName;
 		}
-
-		
 	}
 }

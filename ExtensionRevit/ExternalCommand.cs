@@ -24,7 +24,7 @@ namespace ExtensionRevit
 	    [EditorBrowsable(EditorBrowsableState.Never)]
 		public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
 		{
-			// Debugger.Launch();
+			 Debugger.Launch();
 
 
 			 uiapp = commandData.Application;

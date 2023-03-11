@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ExtensionRevit.Extention;
+using static ExtensionRevit.TransactionExtension;
 
 namespace RevitTest.ExternalCommands
 {
@@ -22,29 +22,30 @@ namespace RevitTest.ExternalCommands
 
 	public class AddCommentsExternalCommand : ExternalCommand
 	{
+		IEnumerable<Autodesk.Revit.DB.Element> Rebars;
+
+		Writer[] Writers = new Writer[]
+	    {
+				new CommentWriterRebar(),
+				new CommentWriterRebarBar()
+	    };
 
 		public override void Execute()
 		{
 
-			Writer[] writers = new Writer[] 
-			{
-				new CommentWriterRebar(),
-				new CommentWriterRebarBar() 
-			};
+		   Rebars = doc.GetElementsCategory(Autodesk.Revit.DB.BuiltInCategory.OST_Rebar);
 
-		
-			IEnumerable<Autodesk.Revit.DB.Element> Rebars = doc.GetElementsCategory(Autodesk.Revit.DB.BuiltInCategory.OST_Rebar);
-			doc.CallWithTransaction(() => AddNewComment(writers, Rebars));
+		   doc.CallWithTransaction(AddNewComment);
 
 			TaskDialog.Show("Information", "Successfully");
 
 		}
 
 		[TransactionName("Add Comments for Rebar")]
-		private static void AddNewComment(Writer[] writers, IEnumerable<Element> Rebars)
+		private void AddNewComment()
 		{
 			foreach (var item in Rebars)
-				foreach (var writer in writers)
+				foreach (var writer in Writers)
 					if (writer.CheackTypeWriterElement(item))
 					{
 						writer.SetInformation(new ParameterInformationBuilder(item));

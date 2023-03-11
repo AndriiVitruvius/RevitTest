@@ -54,7 +54,7 @@
     <Compile Include="ExternalCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RibbonExtension.cs" />
-    <Compile Include="Transaction.cs" />
+    <Compile Include="TransactionExtension.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
